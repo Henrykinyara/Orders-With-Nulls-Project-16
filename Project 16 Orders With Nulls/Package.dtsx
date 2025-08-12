@@ -1,0 +1,853 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/15/2025 1:33:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-OR90DAO"
+  DTS:CreatorName="DESKTOP-OR90DAO\PC"
+  DTS:DTSID="{EB9F1A7D-48BB-479F-8033-DD488D3E02C9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{EAEE4440-3F24-4C7E-8F1F-98A1739D5A91}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-OR90DAO.EPKO_DATABASE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9AB3FE8F-7F87-4BB4-A551-D6B5D2FE7B11}"
+      DTS:ObjectName="DESKTOP-OR90DAO.EPKO_DATABASE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-OR90DAO;Initial Catalog=EPKO_DATABASE;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{9AB3FE8F-7F87-4BB4-A551-D6B5D2FE7B11}DESKTOP-OR90DAO.EPKO_DATABASE;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{D799F11B-558A-4BAA-9407-A6D1617D5EBF}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC\Documents\HK Projects\Henry Kinyara Kinyua Project 16\Orders with Nulls.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{398E5C36-13DB-4B6B-BA68-CC62B3E01148}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\PC\Documents\HK Projects\Henry Kinyara Kinyua Project 16\Orders with Nulls.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Orders with Nulls]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{92AD18F8-0CB7-4294-925C-C1514C799C75}"
+      DTS:ObjectName="Orders with Nulls">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\PC\Downloads\Orders with Nulls.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order ID"
+              DTS:DTSID="{49A002AB-D625-4499-90BD-19B299CD2FBA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order Date"
+              DTS:DTSID="{D46B8412-DF25-419C-9FE6-F02F701BAD1E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order Quantity"
+              DTS:DTSID="{90AAA8D2-3E78-4082-A330-2546B26A721A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales"
+              DTS:DTSID="{8134E633-C4AC-456E-A78E-C82B98963E29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ship Mode"
+              DTS:DTSID="{9AA32A96-2196-4451-A0B4-D0B49C66CA27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Profit"
+              DTS:DTSID="{632AA2EB-0F86-435A-B29D-CA59A86A4ACD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unit Price"
+              DTS:DTSID="{5219C0C8-84F2-460B-8402-A2E917444BEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer Name"
+              DTS:DTSID="{E1E98397-A983-4ADC-BE9E-0B7021A87018}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer Segment"
+              DTS:DTSID="{D54842A9-7E03-4FB9-A1E7-1CF2635BECCE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Category"
+              DTS:DTSID="{EF55AF3C-EB5A-4D12-B95E-105367942653}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Orders with Nulls data source to EPKO DATABASE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{28E697BA-70ED-440D-8023-EC2B8F127B06}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Orders with Nulls data source to EPKO DATABASE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="EPKO_DATABASE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Orders_With_Nulls]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-OR90DAO.EPKO_DATABASE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-OR90DAO.EPKO_DATABASE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].Columns[Order ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Order ID"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Order ID]"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Order ID]" />
+                    <inputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].Columns[Order Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Order Date"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Order Date]"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Order Date]" />
+                    <inputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].Columns[Order Quantity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Order Quantity"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Order Quantity]"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Order Quantity]" />
+                    <inputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].Columns[Sales]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Sales]"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Sales]" />
+                    <inputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].Columns[Ship Mode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ship Mode"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Ship Mode]"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Ship Mode]" />
+                    <inputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].Columns[Profit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Profit"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Profit]" />
+                    <inputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].Columns[Unit Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Unit Price"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Unit Price]"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Unit Price]" />
+                    <inputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].Columns[Customer Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Customer Name"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Customer Name]"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Customer Name]" />
+                    <inputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].Columns[Customer Segment]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Customer Segment"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Customer Segment]"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Customer Segment]" />
+                    <inputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].Columns[Product Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Product Category"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Product Category]"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Product Category]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Order ID" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Order Date" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Order Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Order Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Sales]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Ship Mode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ship Mode" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Profit" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Unit Price" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Customer Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Customer Name" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Customer Segment]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Customer Segment" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input].ExternalColumns[Product Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Product Category" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Orders with Nulls"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Orders with Nulls]"
+                  connectionManagerRefId="Package.ConnectionManagers[Orders with Nulls]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Order ID]"
+                      length="50"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Order ID]"
+                      name="Order ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Order Date]"
+                      length="50"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Order Date]"
+                      name="Order Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Order Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Order Quantity]"
+                      length="50"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Order Quantity]"
+                      name="Order Quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Sales]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Sales]"
+                      length="50"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Sales]"
+                      name="Sales"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Ship Mode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Ship Mode]"
+                      length="50"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Ship Mode]"
+                      name="Ship Mode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Profit]"
+                      length="50"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Profit]"
+                      name="Profit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Unit Price]"
+                      length="50"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Unit Price]"
+                      name="Unit Price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Customer Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Customer Name]"
+                      length="50"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Customer Name]"
+                      name="Customer Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Customer Segment]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Customer Segment]"
+                      length="50"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Customer Segment]"
+                      name="Customer Segment"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Product Category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Product Category]"
+                      length="50"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].Columns[Product Category]"
+                      name="Product Category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Order ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Order ID" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Order Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Order Date" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Order Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Order Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Sales]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Ship Mode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ship Mode" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Profit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Profit" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Unit Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Unit Price" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Customer Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Customer Name" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Customer Segment]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Customer Segment" />
+                    <externalMetadataColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output].ExternalColumns[Product Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Product Category" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Orders with Nulls data source to EPKO DATABASE.Paths[Flat File Source Output]"
+              endId="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="314,42"
+          Id="Package\Orders with Nulls data source to EPKO DATABASE"
+          TopLeft="162,75" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Orders with Nulls data source to EPKO DATABASE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE"
+          TopLeft="255,157" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Orders with Nulls data source to EPKO DATABASE\Orders with Nulls"
+          TopLeft="251,34" />
+        <EdgeLayout
+          Id="Package\Orders with Nulls data source to EPKO DATABASE.Paths[Flat File Source Output]"
+          TopLeft="333.25,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81"
+              Start="0,0"
+              End="0,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Orders with Nulls data source to EPKO DATABASE\EPKO_DATABASE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

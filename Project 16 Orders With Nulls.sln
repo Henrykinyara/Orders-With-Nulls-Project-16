@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Project 16 Orders With Nulls", "Project 16 Orders With Nulls\Project 16 Orders With Nulls.dtproj", "{176AF453-4242-DF0C-766C-2AC4A9C552B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{176AF453-4242-DF0C-766C-2AC4A9C552B8}.Development|Default.ActiveCfg = Development
+		{176AF453-4242-DF0C-766C-2AC4A9C552B8}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6C6CD09-3767-4985-AD24-78FD67F27EF7}
+	EndGlobalSection
+EndGlobal
