@@ -21,7 +21,6 @@ The dataset  contains order data with missing (`NULL`) values.
 - Quantity  
 - Price  
 - Region  
-- ... (other columns depending on the dataset)
 
 ---
 
@@ -59,8 +58,8 @@ CREATE TABLE Orders_with_nulls (
 
 CREATE VIEW vw_orders AS
 SELECT OrderID, CustomerName, ProductName, OrderDate, Quantity, Price, Region
-FROM Orders_with_nulls
-WHERE OrderDate IS NOT NULL;
+FROM Orders_with_nulls;
+
 
 CREATE PROCEDURE sp_orders
 AS
